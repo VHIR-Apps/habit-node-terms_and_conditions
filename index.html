@@ -86,7 +86,7 @@
       <span>📅 <strong>Effective Date:</strong> June 5, 2026</span>
       <span>🏢 <strong>Developer:</strong> VHIR Tech</span>
       <span>📦 <strong>Package:</strong> com.habit.node</span>
-      <span>🔢 <strong>Version:</strong> 1.0.4</span>
+      <span>🔢 <strong>Version:</strong> 1.0.5</span>
       <span>🌍 <strong>Scope:</strong> Global</span>
     </div>
   </div>
@@ -96,7 +96,7 @@
   </div>
 
   <h2>1. Acceptance of Terms</h2>
-  <p>These Terms constitute a legally binding agreement between you and VHIR Tech governing your use of HabitNode (Version 1.0.4). By using the App, you confirm you are at least 13 years of age. These Terms incorporate our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a> by reference.</p>
+  <p>These Terms constitute a legally binding agreement between you and VHIR Tech governing your use of HabitNode (Version 1.0.5). By using the App, you confirm you are at least 13 years of age. These Terms incorporate our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a> by reference.</p>
 
   <h2>2. License to Use</h2>
   <p>VHIR Tech grants you a personal, non-exclusive, non-transferable, revocable, limited license to use HabitNode for personal, non-commercial productivity purposes. You may not copy, modify, reverse-engineer, decompile, or create derivative works.</p>
@@ -118,31 +118,85 @@
   <h2>7. Advertisements</h2>
   <p>Free version displays ads via Google AdMob and Unity Ads. Pro subscribers enjoy ad-free experience. For ad data handling, see our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
 
-  <h2>8. Limitation of Liability</h2>
-  <p>HabitNode is provided "AS IS" without warranties. VHIR Tech is not liable for indirect, incidental, or consequential damages including data loss.</p>
+  <h2>8. Alarm & Lock Screen Features</h2>
+  <div class="card card-blue">
+    <p><strong>🔔 Full-Screen Alarms:</strong> HabitNode includes professional alarm functionality that displays full-screen alerts on your lock screen to ensure you never miss your habit reminders. By enabling alarms, you grant HabitNode permission to:</p>
+    <ul style="margin-top:12px;">
+      <li>Display alarm notifications over your lock screen</li>
+      <li>Wake your device screen when an alarm fires</li>
+      <li>Play alarm sounds at full volume (even in silent/vibrate mode for scheduled alarms)</li>
+      <li>Keep the screen on during active alarms</li>
+      <li>Run a temporary background service to play alarm sounds</li>
+    </ul>
+  </div>
 
-  <h2>9. Intellectual Property</h2>
-  <p>All content, design, UI/UX, source code, and HabitNode branding are exclusive property of VHIR Tech.</p>
+  <div class="card card-amber">
+    <p><strong>⚠️ Alarm Security Lock:</strong> When an alarm is ringing on your lock screen, the alarm interface is the only accessible screen until you dismiss or snooze it. This prevents unauthorized access to your app data while your device is locked. You must explicitly tap "Stop Alarm" or "Snooze" to exit the alarm screen.</p>
+  </div>
 
-  <h2>10. Privacy</h2>
+  <div class="card card-green">
+    <p><strong>✅ User Control:</strong> You can disable alarms at any time through:</p>
+    <ul style="margin-top:12px;">
+      <li>Individual habit settings (turn off alarm per habit)</li>
+      <li>App settings (disable all alarms globally)</li>
+      <li>Android system notification settings</li>
+      <li>Revoking the "Alarms & Reminders" permission</li>
+    </ul>
+  </div>
+
+  <p><strong>Battery & Performance:</strong> Alarm features may slightly impact battery life as they require certain background capabilities. HabitNode is optimized to minimize impact, but for guaranteed alarm delivery, we recommend whitelisting the app from battery optimization in your device settings.</p>
+
+  <p><strong>Liability Disclaimer:</strong> While HabitNode employs industry-standard mechanisms (full-screen intents, exact alarms, wake locks) for reliable alarm delivery, VHIR Tech cannot guarantee 100% alarm delivery in all cases due to device-specific battery optimization, manufacturer customizations (e.g., MIUI, EMUI, OneUI), Do Not Disturb modes, or operating system limitations. <strong>You acknowledge that HabitNode alarms should not be solely relied upon for critical, life-safety, or medical purposes.</strong></p>
+
+  <h2>9. Notifications</h2>
+  <p>HabitNode sends various types of notifications including habit reminders, AI-powered motivational nudges, smart reminders, daily summaries, badge unlocks, and chat messages. You can customize or disable any notification category in app settings or your device's notification management.</p>
+
+  <h2>10. Background Services & Permissions</h2>
+  <p>To deliver core functionality, HabitNode requires certain Android permissions:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Permission</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>SCHEDULE_EXACT_ALARM</td><td>Fire alarms at the exact scheduled time</td></tr>
+        <tr><td>USE_FULL_SCREEN_INTENT</td><td>Display alarms over lock screen</td></tr>
+        <tr><td>WAKE_LOCK</td><td>Keep device awake during alarm</td></tr>
+        <tr><td>DISABLE_KEYGUARD</td><td>Allow alarm display on lock screen</td></tr>
+        <tr><td>TURN_SCREEN_ON</td><td>Wake screen for alarm</td></tr>
+        <tr><td>POST_NOTIFICATIONS</td><td>Send reminders & notifications</td></tr>
+        <tr><td>FOREGROUND_SERVICE</td><td>Background alarm sound playback</td></tr>
+        <tr><td>VIBRATE</td><td>Vibration for alarms & notifications</td></tr>
+        <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Re-schedule alarms after device reboot</td></tr>
+        <tr><td>INTERNET / NETWORK_STATE</td><td>Cloud sync & community features</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>These permissions are used solely for the stated purposes. Detailed handling is described in our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
+
+  <h2>11. Limitation of Liability</h2>
+  <p>HabitNode is provided "AS IS" without warranties. VHIR Tech is not liable for indirect, incidental, or consequential damages including data loss, missed alarms, missed habits, or loss of streaks. The App is a productivity tool, not a critical reminder system for medical, safety, or emergency purposes.</p>
+
+  <h2>12. Intellectual Property</h2>
+  <p>All content, design, UI/UX, source code, alarm sound files (created/licensed by us), and HabitNode branding are exclusive property of VHIR Tech.</p>
+
+  <h2>13. Privacy</h2>
   <p>Your use is governed by our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>, incorporated by reference.</p>
 
-  <h2>11. Termination</h2>
+  <h2>14. Termination</h2>
   <p>You may stop using HabitNode by uninstalling. We may terminate access for violations. Cloud data may be deleted per our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
 
-  <h2>12. Governing Law</h2>
+  <h2>15. Governing Law</h2>
   <p>Governed by laws of India (IT Act 2000). EU/UK consumer protections apply additionally. Disputes: contact <span class="hl">vhirsupport@gmail.com</span> first, then Indian courts.</p>
 
-  <h2>13. Changes to Terms</h2>
+  <h2>16. Changes to Terms</h2>
   <p>We may modify these Terms. Significant changes notified via in-app notification. Continued use = acceptance. Review periodically along with our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
 
-  <h2>14. Contact Us</h2>
+  <h2>17. Contact Us</h2>
   <div class="contact-box">
     <div style="font-size:2rem; margin-bottom:16px;">📬</div>
     <div class="contact-row"><strong>Developer</strong> VHIR Tech</div>
     <div class="contact-row"><strong>App Name</strong> HabitNode</div>
     <div class="contact-row"><strong>Package ID</strong> com.habit.node</div>
-    <div class="contact-row"><strong>Version</strong> 1.0.4</div>
+    <div class="contact-row"><strong>Version</strong> 1.0.5</div>
     <div class="contact-row"><strong>Email</strong> <a href="mailto:vhirsupport@gmail.com">vhirsupport@gmail.com</a></div>
     <div class="contact-row"><strong>Privacy Policy</strong> <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">View Privacy Policy</a></div>
     <div class="contact-row"><strong>Response Time</strong> Within 7 business days</div>
@@ -150,8 +204,8 @@
 
   <div class="footer">
     <p>© 2026 <strong>HabitNode by VHIR Tech</strong>. All rights reserved.</p>
-    <p>Terms effective as of <strong>June 5, 2026</strong> (Version 1.0.4).</p>
-    <p><a href="https://vhir-apps.github.io/habit-node-privacy_policy/">📄 Privacy Policy</a> · com.habit.node · v1.0.4</p>
+    <p>Terms effective as of <strong>June 5, 2026</strong> (Version 1.0.5).</p>
+    <p><a href="https://vhir-apps.github.io/habit-node-privacy_policy/">📄 Privacy Policy</a> · com.habit.node · v1.0.5</p>
   </div>
 
 </div>
