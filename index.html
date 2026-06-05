@@ -7,231 +7,67 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --navy: #0a1628;
-    --navy2: #0f2040;
-    --blue: #1a56db;
-    --blue-light: #3b82f6;
-    --accent: #22d3ee;
-    --gold: #f59e0b;
-    --surface: #111827;
-    --surface2: #1a2540;
-    --border: rgba(255,255,255,0.07);
-    --text: #e2e8f0;
-    --muted: #94a3b8;
-    --green: #10b981;
-    --red: #ef4444;
+    --navy: #0a1628; --navy2: #0f2040; --blue: #1a56db; --blue-light: #3b82f6;
+    --accent: #22d3ee; --gold: #f59e0b; --surface: #111827; --surface2: #1a2540;
+    --border: rgba(255,255,255,0.07); --text: #e2e8f0; --muted: #94a3b8;
+    --green: #10b981; --red: #ef4444;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
-    background: var(--navy);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.75;
-    min-height: 100vh;
+    background: var(--navy); color: var(--text);
+    font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.75; min-height: 100vh;
   }
-
   body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
+    content: ''; position: fixed; inset: 0;
     background:
       radial-gradient(ellipse 80% 60% at 10% 10%, rgba(26,86,219,0.18) 0%, transparent 60%),
       radial-gradient(ellipse 60% 50% at 90% 80%, rgba(34,211,238,0.10) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 0;
+    pointer-events: none; z-index: 0;
   }
-
-  .wrapper {
-    position: relative;
-    z-index: 1;
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 60px 24px 80px;
-  }
-
-  .header {
-    text-align: center;
-    margin-bottom: 60px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid var(--border);
-  }
-
+  .wrapper { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 60px 24px 80px; }
+  .header { text-align: center; margin-bottom: 60px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
   .logo-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(26,86,219,0.15);
-    border: 1px solid rgba(26,86,219,0.35);
-    border-radius: 100px;
-    padding: 8px 20px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--blue-light);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 24px;
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(26,86,219,0.15); border: 1px solid rgba(26,86,219,0.35);
+    border-radius: 100px; padding: 8px 20px; font-size: 13px; font-weight: 600;
+    color: var(--blue-light); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 24px;
   }
-
-  h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: #fff;
-    line-height: 1.15;
-    margin-bottom: 16px;
-  }
-
+  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3rem); color: #fff; line-height: 1.15; margin-bottom: 16px; }
   h1 em { font-style: italic; color: var(--accent); }
-
-  .meta-row {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
-    font-size: 13.5px;
-    color: var(--muted);
-    margin-top: 20px;
-  }
-
+  .meta-row { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 13.5px; color: var(--muted); margin-top: 20px; }
   .meta-row span { display: flex; align-items: center; gap: 6px; }
   .meta-row strong { color: var(--text); }
-
-  .callout {
-    background: linear-gradient(135deg, rgba(26,86,219,0.1), rgba(34,211,238,0.06));
-    border: 1px solid rgba(26,86,219,0.25);
-    border-radius: 16px;
-    padding: 24px 28px;
-    margin-bottom: 50px;
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-  }
-
-  .callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
-  .callout p { color: var(--text); font-size: 15px; margin-bottom: 0; }
-
-  h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.45rem;
-    color: #fff;
-    margin: 50px 0 20px;
-    padding: 14px 20px;
-    background: var(--surface2);
-    border-left: 4px solid var(--blue-light);
-    border-radius: 0 12px 12px 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--accent);
-    margin: 24px 0 12px;
-    letter-spacing: 0.03em;
-  }
-
-  p { color: var(--text); margin-bottom: 14px; font-size: 15px; }
-
   a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
   a:hover { color: #67e8f9; }
-
-  .card {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 20px 24px;
-    margin: 14px 0;
+  h2 {
+    font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: #fff;
+    margin: 50px 0 20px; padding: 14px 20px; background: var(--surface2);
+    border-left: 4px solid var(--blue-light); border-radius: 0 12px 12px 0;
   }
-
+  p { color: var(--text); margin-bottom: 14px; font-size: 15px; }
+  .card { background: var(--surface2); border: 1px solid var(--border); border-radius: 14px; padding: 20px 24px; margin: 14px 0; }
   .card-blue  { border-color: rgba(59,130,246,0.25); background: rgba(59,130,246,0.06); }
   .card-green { border-color: rgba(16,185,129,0.25); background: rgba(16,185,129,0.06); }
   .card-amber { border-color: rgba(245,158,11,0.25); background: rgba(245,158,11,0.06); }
   .card-red   { border-color: rgba(239,68,68,0.25);  background: rgba(239,68,68,0.06);  }
-
-  .card strong { color: var(--blue-light); }
-  .card-green strong { color: var(--green); }
-  .card-amber strong { color: var(--gold); }
-  .card-red strong   { color: #fc8181; }
-
   ul { list-style: none; padding: 0; margin: 0; }
-
-  ul li {
-    padding: 9px 0 9px 28px;
-    position: relative;
-    color: var(--text);
-    font-size: 15px;
-    border-bottom: 1px solid var(--border);
-  }
-
+  ul li { padding: 9px 0 9px 28px; position: relative; color: var(--text); font-size: 15px; border-bottom: 1px solid var(--border); }
   ul li:last-child { border-bottom: none; }
-
-  ul li::before {
-    content: '›';
-    position: absolute;
-    left: 8px;
-    color: var(--blue-light);
-    font-weight: 700;
-    font-size: 18px;
-    top: 7px;
-  }
-
-  ul li strong { color: #fff; }
-
+  ul li::before { content: '›'; position: absolute; left: 8px; color: var(--blue-light); font-weight: 700; font-size: 18px; top: 7px; }
   .table-wrap { overflow-x: auto; border-radius: 14px; margin: 16px 0; }
-
   table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
   thead tr { background: var(--blue); color: #fff; }
-  thead th { padding: 12px 16px; text-align: left; font-weight: 600; letter-spacing: 0.04em; }
+  thead th { padding: 12px 16px; text-align: left; font-weight: 600; }
   tbody tr { background: var(--surface2); border-bottom: 1px solid var(--border); }
-  tbody tr:last-child { border-bottom: none; }
-  tbody tr:hover { background: rgba(59,130,246,0.08); transition: background 0.2s; }
+  tbody tr:hover { background: rgba(59,130,246,0.08); }
   tbody td { padding: 11px 16px; color: var(--text); }
   tbody td:first-child { color: #fff; font-weight: 500; }
-
-  .contact-box {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 32px;
-    text-align: center;
-    margin-top: 16px;
-  }
-
-  .contact-box a { color: var(--accent); text-decoration: none; font-weight: 500; }
-  .contact-box a:hover { text-decoration: underline; }
-
-  .contact-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 0;
-    font-size: 15px;
-    color: var(--text);
-  }
-
+  .contact-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 18px; padding: 32px; text-align: center; margin-top: 16px; }
+  .contact-row { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 10px 0; font-size: 15px; color: var(--text); }
   .contact-row strong { color: var(--muted); font-weight: 500; min-width: 130px; text-align: right; }
-
-  .footer {
-    text-align: center;
-    margin-top: 60px;
-    padding-top: 30px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 13.5px;
-    line-height: 2;
-  }
-
-  .footer strong { color: var(--text); }
+  .footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13.5px; line-height: 2; }
   .footer a { color: var(--accent); }
   .hl { color: var(--accent); font-weight: 600; }
-  .hl-green { color: var(--green); font-weight: 600; }
-  .hl-gold { color: var(--gold); font-weight: 600; }
-
   @media (max-width: 600px) {
     .wrapper { padding: 36px 16px 60px; }
     h2 { font-size: 1.2rem; }
@@ -243,236 +79,79 @@
 <body>
 <div class="wrapper">
 
-  <!-- HEADER -->
   <div class="header">
     <div class="logo-badge"><span>📜</span> Legally Binding Agreement</div>
     <h1>HabitNode<br/><em>Terms & Conditions</em></h1>
     <div class="meta-row">
-      <span>📅 <strong>Effective Date:</strong> June 2, 2026</span>
+      <span>📅 <strong>Effective Date:</strong> June 5, 2026</span>
       <span>🏢 <strong>Developer:</strong> VHIR Tech</span>
       <span>📦 <strong>Package:</strong> com.habit.node</span>
+      <span>🔢 <strong>Version:</strong> 1.0.4</span>
       <span>🌍 <strong>Scope:</strong> Global</span>
     </div>
   </div>
 
-  <!-- INTRO -->
-  <div class="callout">
-    <div class="callout-icon">⚖️</div>
-    <div>
-      <p>Welcome to <strong>HabitNode</strong>. By downloading, accessing, installing, or using the HabitNode application developed by <strong>VHIR Tech</strong>, you agree to be legally bound by these Terms and Conditions. Please read them carefully along with our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>. If you do not agree with any part of these terms, please discontinue use of the application immediately.</p>
-    </div>
+  <div style="background: linear-gradient(135deg, rgba(26,86,219,0.1), rgba(34,211,238,0.06)); border: 1px solid rgba(26,86,219,0.25); border-radius: 16px; padding: 24px 28px; margin-bottom: 50px;">
+    <p>Welcome to <strong>HabitNode</strong> by <strong>VHIR Tech</strong>. By downloading, accessing, installing, or using the HabitNode application, you agree to be legally bound by these Terms and Conditions and our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>. If you do not agree, please discontinue use immediately.</p>
   </div>
 
-  <!-- SECTION 1 -->
   <h2>1. Acceptance of Terms</h2>
-  <p>These Terms and Conditions ("Terms") constitute a legally binding agreement between you ("User") and VHIR Tech ("Developer," "we," "us," or "our") governing your access to and use of the HabitNode mobile application ("App"). By using the App, you confirm that you are at least 13 years of age and have the legal capacity to enter into this agreement. These Terms incorporate our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a> by reference.</p>
+  <p>These Terms constitute a legally binding agreement between you and VHIR Tech governing your use of HabitNode (Version 1.0.4). By using the App, you confirm you are at least 13 years of age. These Terms incorporate our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a> by reference.</p>
 
-  <!-- SECTION 2 -->
   <h2>2. License to Use</h2>
-  <p>VHIR Tech grants you a personal, non-exclusive, non-transferable, revocable, and limited license to use HabitNode strictly for your personal, non-commercial productivity purposes. This license does not include the right to:</p>
-  <ul>
-    <li>Copy, modify, or distribute any part of the App</li>
-    <li>Reverse-engineer, decompile, or disassemble the App</li>
-    <li>Create derivative works based on the App</li>
-    <li>Use the App for any commercial purpose without written permission from VHIR Tech</li>
-    <li>Transfer your license or account to any other person</li>
-  </ul>
+  <p>VHIR Tech grants you a personal, non-exclusive, non-transferable, revocable, limited license to use HabitNode for personal, non-commercial productivity purposes. You may not copy, modify, reverse-engineer, decompile, or create derivative works.</p>
 
-  <!-- SECTION 3 -->
   <h2>3. User Accounts & Google Sign-In</h2>
-  <p>To access cloud features including the Global Leaderboard, Google Drive Backup, Social Feed, and Direct Messaging, you must authenticate via your Google account through Firebase Authentication. For details on how your authentication data is handled, please refer to our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
-  <ul>
-    <li>You are responsible for all activity that occurs under your account</li>
-    <li>You must not share your account credentials with others</li>
-    <li>You must notify us immediately at <span class="hl">vhirsupport@gmail.com</span> if you suspect unauthorized access</li>
-    <li>We reserve the right to suspend or terminate accounts that violate these Terms</li>
-  </ul>
+  <p>Cloud features require Google Sign-In via Firebase Authentication. You are responsible for all activity under your account. For data handling details, see our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
 
-  <!-- SECTION 4 -->
-  <h2>4. Community Guidelines & Acceptable Use</h2>
-  <p>HabitNode's social features — including the Social Feed, Global Leaderboard, and Direct Messaging — are designed to foster a motivated, respectful, and disciplined community. By participating, you agree to the following rules:</p>
-  <ul>
-    <li>You will not post content that is abusive, harassing, threatening, defamatory, obscene, or discriminatory</li>
-    <li>You will not spam, distribute unauthorized promotions, or engage in malicious activities</li>
-    <li>You will respect the privacy of other users and not send unsolicited or inappropriate messages</li>
-    <li>You will not impersonate any person, entity, or VHIR Tech staff</li>
-    <li>You will not attempt to hack, exploit, or manipulate the leaderboard, XP system, or any App feature</li>
-    <li>You will not use the App for any unlawful purpose</li>
-  </ul>
+  <h2>4. Community Guidelines</h2>
+  <p>You agree not to post abusive, harassing, threatening, defamatory, obscene, discriminatory, or spam content. You will not impersonate others, manipulate the leaderboard, or use the App for unlawful purposes.</p>
 
-  <!-- SECTION 5 -->
-  <h2>5. Content Moderation & Enforcement</h2>
-  <p>VHIR Tech reserves the right to moderate the HabitNode community to maintain a safe and respectful environment. Our enforcement actions include:</p>
+  <h2>5. Content Moderation</h2>
+  <div class="card card-amber"><p><strong>⚠️ Content Removal:</strong> We may remove content violating these Terms at our sole discretion.</p></div>
+  <div class="card card-amber"><p><strong>⚠️ Account Suspension:</strong> Accounts may be suspended or terminated for violations. Cloud data may be deleted per our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p></div>
+  <div class="card card-green"><p><strong>✅ Appeal Process:</strong> Contact <span class="hl">vhirsupport@gmail.com</span> with subject "Account Appeal — HabitNode". Review within 7 business days.</p></div>
 
-  <div class="card card-amber">
-    <p><strong>⚠️ Content Removal</strong></p>
-    <p style="margin-bottom:0;">We may remove, hide, or modify any user-generated content that violates these Terms or our Community Guidelines, at our sole discretion and without prior notice.</p>
-  </div>
+  <h2>6. In-App Purchases</h2>
+  <p>Pro subscription processed via <strong>Google Play Billing</strong>. Auto-renews unless cancelled 24 hours before renewal. Refunds within 48 hours via Google Play.</p>
 
-  <div class="card card-amber">
-    <p><strong>⚠️ Account Suspension & Termination</strong></p>
-    <p style="margin-bottom:0;">We reserve the right to issue warnings, temporarily suspend, or permanently terminate any user account that violates these Terms. Upon termination, your cloud data may be deleted in accordance with our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
-  </div>
-
-  <div class="card card-green">
-    <p><strong>✅ Appeal Process</strong></p>
-    <p style="margin-bottom:0;">If you believe your account was suspended or content was removed in error, you have the right to appeal by contacting us at <span class="hl">vhirsupport@gmail.com</span> with the subject line <em>"Account Appeal — HabitNode"</em>. We will review your appeal within <strong>7 business days</strong> and respond with our decision. All appeals are reviewed fairly and in good faith.</p>
-  </div>
-
-  <!-- SECTION 6 -->
-  <h2>6. In-App Purchases & Subscription</h2>
-  <p>HabitNode offers an optional Pro subscription that unlocks premium features including ad-free experience, unlimited habits, advanced analytics, priority cloud sync, and exclusive badges and themes.</p>
-
-  <div class="card card-blue">
-    <p><strong>💳 Billing</strong></p>
-    <p style="margin-bottom:0;">All purchases are processed securely through <strong>Google Play Billing</strong>. Your payment information is handled entirely by Google and is governed by Google's Terms of Service. VHIR Tech does not store, access, or process your payment card details. For data handling details, see our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
-  </div>
-
-  <div class="card card-blue">
-    <p><strong>🔄 Subscription Renewal</strong></p>
-    <p style="margin-bottom:0;">Pro subscriptions automatically renew at the end of each billing period unless cancelled at least 24 hours before the renewal date. You may manage or cancel your subscription at any time via <span class="hl">Google Play Store → Subscriptions → HabitNode</span>.</p>
-  </div>
-
-  <div class="card card-green">
-    <p><strong>💰 Refund Policy</strong></p>
-    <p>Refunds are handled by Google Play in accordance with Google's refund policy. You may request a refund within <strong>48 hours</strong> of purchase through Google Play. After 48 hours, refund eligibility is determined by Google's standard policy.</p>
-    <p style="margin-bottom:0;">For refund assistance, contact us at <span class="hl">vhirsupport@gmail.com</span> — we will work with you to resolve any billing concerns fairly.</p>
-  </div>
-
-  <div class="card card-amber">
-    <p><strong>⚠️ Free Features</strong></p>
-    <p style="margin-bottom:0;">Core habit tracking, Pomodoro timer, local data storage, and basic notifications are available for free. A Pro subscription is optional and enhances your experience but is not required for basic use.</p>
-  </div>
-
-  <!-- SECTION 7 -->
   <h2>7. Advertisements</h2>
-  <p>The free version of HabitNode displays advertisements via Google AdMob (banner ads) and Unity Ads (interstitial and rewarded ads). By using the free version, you consent to the display of these advertisements. Pro subscribers experience a completely ad-free version of the App. For information on how ad networks handle your data, please see our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
-  <ul>
-    <li>Ads are served using anonymous identifiers — your personal habits and data are never used for ad targeting</li>
-    <li>You may opt out of personalized ads via Android Settings → Google → Ads</li>
-    <li>Ad content is governed by Google's and Unity's respective advertising policies</li>
-  </ul>
+  <p>Free version displays ads via Google AdMob and Unity Ads. Pro subscribers enjoy ad-free experience. For ad data handling, see our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
 
-  <!-- SECTION 8 -->
-  <h2>8. Data Backup & Limitation of Liability</h2>
-  <p>HabitNode provides automatic Google Drive backup to help protect your data. However, the App is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis without warranties of any kind. Please review our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a> for information on how your backup data is stored and secured.</p>
+  <h2>8. Limitation of Liability</h2>
+  <p>HabitNode is provided "AS IS" without warranties. VHIR Tech is not liable for indirect, incidental, or consequential damages including data loss.</p>
 
-  <div class="card card-red">
-    <p><strong>⚠️ Disclaimer of Warranties</strong></p>
-    <p style="margin-bottom:0;">To the maximum extent permitted by applicable law, VHIR Tech expressly disclaims all warranties, express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that the App will be uninterrupted, error-free, or completely secure.</p>
-  </div>
-
-  <div class="card card-red">
-    <p><strong>⚠️ Limitation of Liability</strong></p>
-    <p style="margin-bottom:0;">To the maximum extent permitted by applicable law, VHIR Tech shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of data, habits, XP, streaks, backup files, or revenue, arising from your use of or inability to use the App, even if we have been advised of the possibility of such damages.</p>
-  </div>
-
-  <!-- SECTION 9 -->
   <h2>9. Intellectual Property</h2>
-  <p>All content, design, UI/UX, graphics, features, source code, branding, and the HabitNode name are the exclusive intellectual property of VHIR Tech and are protected by applicable copyright, trademark, and intellectual property laws. You may not:</p>
-  <ul>
-    <li>Copy, reproduce, or redistribute any part of the App without written permission</li>
-    <li>Use the HabitNode name, logo, or branding without written permission</li>
-    <li>Reverse-engineer, decompile, or extract the source code of the App</li>
-    <li>Create derivative works or competing products based on the App</li>
-  </ul>
+  <p>All content, design, UI/UX, source code, and HabitNode branding are exclusive property of VHIR Tech.</p>
 
-  <!-- SECTION 10 -->
-  <h2>10. User-Generated Content</h2>
-  <p>By posting content to the Social Feed, chat, or any public area of HabitNode, you grant VHIR Tech a non-exclusive, royalty-free, worldwide license to display and distribute that content within the App for the purpose of operating the service. You retain ownership of your content. For information on how your content data is stored, refer to our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
-  <ul>
-    <li>You are solely responsible for all content you post or send through the App</li>
-    <li>You must not post content that infringes on any third-party intellectual property rights</li>
-    <li>You may delete your content at any time using the in-app tools provided</li>
-  </ul>
+  <h2>10. Privacy</h2>
+  <p>Your use is governed by our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>, incorporated by reference.</p>
 
-  <!-- SECTION 11 -->
-  <h2>11. Privacy</h2>
-  <p>Your use of HabitNode is also governed by our <strong>Privacy Policy</strong>, which is incorporated into these Terms by reference. By using the App, you consent to the data practices described in our Privacy Policy. Please review the full Privacy Policy at <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">https://vhir-apps.github.io/habit-node-privacy_policy/</a>.</p>
+  <h2>11. Termination</h2>
+  <p>You may stop using HabitNode by uninstalling. We may terminate access for violations. Cloud data may be deleted per our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
 
-  <!-- SECTION 12 -->
-  <h2>12. Third-Party Services</h2>
-  <p>HabitNode integrates third-party services including Google Firebase, Google AdMob, Unity Ads, and Google Play Billing. Your use of these services is subject to their respective terms of service and privacy policies. VHIR Tech is not responsible for the practices of these third-party services. For details on what data is shared with third parties, please see our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
+  <h2>12. Governing Law</h2>
+  <p>Governed by laws of India (IT Act 2000). EU/UK consumer protections apply additionally. Disputes: contact <span class="hl">vhirsupport@gmail.com</span> first, then Indian courts.</p>
 
-  <!-- SECTION 13 -->
-  <h2>13. Termination</h2>
-  <p>You may stop using HabitNode at any time by uninstalling the App. We may suspend or terminate your access to cloud features at any time if you violate these Terms. Upon termination:</p>
-  <ul>
-    <li>Your license to use the App immediately terminates</li>
-    <li>Your cloud data (leaderboard profile, chat history) may be deleted per our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a></li>
-    <li>Your local data on your device remains until you uninstall the App</li>
-    <li>Active Pro subscriptions must be cancelled separately via Google Play</li>
-  </ul>
+  <h2>13. Changes to Terms</h2>
+  <p>We may modify these Terms. Significant changes notified via in-app notification. Continued use = acceptance. Review periodically along with our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
 
-  <!-- SECTION 14 -->
-  <h2>14. Governing Law & Dispute Resolution</h2>
-  <div class="card card-blue">
-    <p><strong>⚖️ Governing Law</strong></p>
-    <p style="margin-bottom:0;">These Terms are governed by and construed in accordance with the laws of <strong>India</strong> (Information Technology Act, 2000 and applicable Indian law), without regard to its conflict of law provisions. For EU/UK users, mandatory consumer protection laws of your country of residence apply in addition to these Terms. Our data handling practices comply with our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
-  </div>
-
-  <div class="card card-blue">
-    <p><strong>🤝 Dispute Resolution</strong></p>
-    <p style="margin-bottom:0;">In the event of any dispute arising from these Terms or your use of HabitNode, we encourage you to first contact us at <span class="hl">vhirsupport@gmail.com</span> to resolve the matter informally. We are committed to resolving disputes fairly and promptly. If informal resolution fails, disputes shall be subject to the jurisdiction of competent courts in India.</p>
-  </div>
-
-  <!-- SECTION 15 -->
-  <h2>15. Changes to These Terms</h2>
-  <p>VHIR Tech reserves the right to modify these Terms at any time to reflect new features, legal requirements, or changes in our practices. We will notify you of significant changes via in-app notification or a prominent notice on this page. The "Effective Date" at the top reflects the date of the most recent revision. Continued use of HabitNode after changes constitutes your acceptance of the updated Terms. We encourage you to periodically review both these Terms and our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
-
-  <!-- SECTION 16 -->
-  <h2>16. Age Requirements</h2>
-  <p>HabitNode is designed for users aged <span class="hl">13 years and older</span>. The App is not directed at children under 13. Social features including leaderboard and chat are available only to users aged 13+. If you are under 13, please do not use the App or provide any personal information. For details on how we handle children's data, see our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>.</p>
-
-  <!-- SECTION 17 -->
-  <h2>17. Severability</h2>
-  <p>If any provision of these Terms is found to be invalid, illegal, or unenforceable by a court of competent jurisdiction, the remaining provisions shall continue in full force and effect. The invalid provision shall be modified to the minimum extent necessary to make it enforceable.</p>
-
-  <!-- SECTION 18 -->
-  <h2>18. Entire Agreement</h2>
-  <p>These Terms, together with our <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">Privacy Policy</a>, constitute the entire agreement between you and VHIR Tech regarding your use of HabitNode and supersede all prior agreements, understandings, and communications between the parties.</p>
-
-  <!-- SECTION 19 -->
-  <h2>19. Contact Us</h2>
+  <h2>14. Contact Us</h2>
   <div class="contact-box">
     <div style="font-size:2rem; margin-bottom:16px;">📬</div>
     <div class="contact-row"><strong>Developer</strong> VHIR Tech</div>
     <div class="contact-row"><strong>App Name</strong> HabitNode</div>
     <div class="contact-row"><strong>Package ID</strong> com.habit.node</div>
+    <div class="contact-row"><strong>Version</strong> 1.0.4</div>
     <div class="contact-row"><strong>Email</strong> <a href="mailto:vhirsupport@gmail.com">vhirsupport@gmail.com</a></div>
-    <div class="contact-row"><strong>Privacy Policy</strong> <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">habit-node-privacy-policy</a></div>
-    <div class="contact-row"><strong>Support Languages</strong> English · বাংলা (Bengali)</div>
+    <div class="contact-row"><strong>Privacy Policy</strong> <a href="https://vhir-apps.github.io/habit-node-privacy_policy/">View Privacy Policy</a></div>
     <div class="contact-row"><strong>Response Time</strong> Within 7 business days</div>
-    <div class="contact-row"><strong>Appeal Requests</strong> Within 7 business days</div>
   </div>
 
-  <!-- SUMMARY TABLE -->
-  <h2>20. Summary at a Glance</h2>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Topic</th><th>Summary</th></tr></thead>
-      <tbody>
-        <tr><td>License</td><td>Personal, non-commercial, revocable use only</td></tr>
-        <tr><td>Age Requirement</td><td>13 years and older</td></tr>
-        <tr><td>Community Rules</td><td>Respectful use — no spam, harassment, or impersonation</td></tr>
-        <tr><td>Account Suspension</td><td>With right to appeal within 7 business days</td></tr>
-        <tr><td>Purchases</td><td>Via Google Play Billing — refunds within 48 hours</td></tr>
-        <tr><td>Ads</td><td>Free version only — opt-out available — Pro is ad-free</td></tr>
-        <tr><td>Liability</td><td>App provided AS IS — no liability for data loss</td></tr>
-        <tr><td>Intellectual Property</td><td>All content owned by VHIR Tech</td></tr>
-        <tr><td>Governing Law</td><td>India (IT Act 2000) — EU/UK consumer law also applies</td></tr>
-        <tr><td>Dispute Resolution</td><td>Email first — then Indian courts</td></tr>
-        <tr><td>Privacy Policy</td><td><a href="https://vhir-apps.github.io/habit-node-privacy_policy/">View Privacy Policy</a></td></tr>
-        <tr><td>Contact</td><td>vhirsupport@gmail.com — 7 business days</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- FOOTER -->
   <div class="footer">
     <p>© 2026 <strong>HabitNode by VHIR Tech</strong>. All rights reserved.</p>
-    <p>These Terms & Conditions are effective as of <strong>June 2, 2026</strong> and apply to all users of HabitNode worldwide.</p>
-    <p style="margin-top:8px;"><a href="https://vhir-apps.github.io/habit-node-privacy_policy/">📄 Privacy Policy</a> · com.habit.node · Built with Flutter · Discipline meets community.</p>
+    <p>Terms effective as of <strong>June 5, 2026</strong> (Version 1.0.4).</p>
+    <p><a href="https://vhir-apps.github.io/habit-node-privacy_policy/">📄 Privacy Policy</a> · com.habit.node · v1.0.4</p>
   </div>
 
 </div>
